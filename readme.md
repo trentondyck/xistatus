@@ -17,9 +17,11 @@ service nginx start
 
 # How to use, client side
 #
+```
 create a folder under windower4/addons called xistatus
 copy xistatus.lua into that folder
 add 'lua load xistatus' to windower4/scripts/init.txt
+```
 
 # Webapp development resources
 #
