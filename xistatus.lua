@@ -9,6 +9,8 @@ _addon.version  = '1.0'
 
 http = require("socket.http")
 ltn12 = require("ltn12")
+require('coroutine')
+
 
 fqdn = 'http://xistatus.chickenkiller.com'
 
@@ -403,6 +405,7 @@ end)
 
 windower.register_event('login', function()
 	status = true
+	coroutine.sleep(10);
 	character = windower.ffxi.get_player().name
 	linkshell = windower.ffxi.get_player().linkshell
 	zone_id = windower.ffxi.get_info().zone
