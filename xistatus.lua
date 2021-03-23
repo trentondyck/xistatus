@@ -405,7 +405,7 @@ end)
 
 windower.register_event('login', function()
 	status = true
-	coroutine.sleep(10);
+	coroutine.sleep(20);
 	character = windower.ffxi.get_player().name
 	linkshell = windower.ffxi.get_player().linkshell
 	zone_id = windower.ffxi.get_info().zone
