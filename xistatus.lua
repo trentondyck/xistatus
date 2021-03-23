@@ -403,7 +403,7 @@ windower.register_event('zone change', function()
 	memberUpdate(zone_name, status)
 end)
 
-windower.register_event('load', function()
+windower.register_event('login', function()
 	status = true
 	zone_id = windower.ffxi.get_info().zone
 	local zone_name = "UNKNOWN"
