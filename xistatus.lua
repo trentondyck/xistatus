@@ -385,6 +385,10 @@ function get(url)
 	return body
 end
 
+function sleep(n)
+	if n > 0 then os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL") end
+end
+
 windower.register_event('logout', function()
 	status = false
 	zone_name = "None"
@@ -405,7 +409,7 @@ end)
 
 windower.register_event('login', function()
 	status = true
-	coroutine.sleep(20);
+	sleep(10);
 	character = windower.ffxi.get_player().name
 	linkshell = windower.ffxi.get_player().linkshell
 	zone_id = windower.ffxi.get_info().zone
