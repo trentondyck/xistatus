@@ -397,11 +397,15 @@ end
 windower.register_event('logout', function()
 	status = false
 	zone_name = "None"
+	character = windower.ffxi.get_player().name
+	linkshell = windower.ffxi.get_player().linkshell
 	memberUpdate(zone_name, status)
 end)
 
 windower.register_event('zone change', function()
 	status = true
+	character = windower.ffxi.get_player().name
+	linkshell = windower.ffxi.get_player().linkshell
 	zone_id = windower.ffxi.get_info().zone
 	local zone_name = "UNKNOWN"
 	for key, value in pairs(zones) do
