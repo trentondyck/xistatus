@@ -9,7 +9,8 @@ _addon.version  = '1.0'
 
 http = require("socket.http")
 ltn12 = require("ltn12")
-require('coroutine')
+require('socket')
+
 
 
 fqdn = 'http://xistatus.chickenkiller.com'
@@ -385,8 +386,12 @@ function get(url)
 	return body
 end
 
-function sleep(n)
-	if n > 0 then os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL") end
+--function sleep(n)
+--	if n > 0 then os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL") end
+--end
+
+function sleep(sec)
+	socket.select(nil, nil, sec)
 end
 
 windower.register_event('logout', function()
